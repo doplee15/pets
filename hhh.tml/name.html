@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        text-align: center;
+        margin-top: 50px;
+    }
+</style>
+<body>
+    <h1 id="welcomemessage">Hello</h1>
+    <button id="logoutbutton" class="hidden">Logout</button>
+
+    <script>
+        var user = localStorage.getItem("user");
+        if(user) {
+            var parseduser =JSON.parse(user);
+            document.getElementById("welcomemessage").innerHTML = `Hello ${parseduser.name}`;
+document.getElementById("logoutbutton").classList.remove("hidden");
+
+        }
+        else{
+            document.getElementById("welcomemessage").innerHTML = `Hello, please <a herf = `.html`>login </a>`;
+        }
+document.getElementById("logoutbutton").addEventListener("click", function() {
+    localStorage.removeItem("user");
+    window.location.href = "login.html";
+
+});
+        
+    </script>
+</body>
+</html>
