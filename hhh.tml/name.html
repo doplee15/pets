@@ -6,14 +6,14 @@
     <title>Document</title>
 </head>
 <style>
-    body{
+    .t6{
         text-align: center;
-        margin-top: 50px;
+    
     }
 </style>
 <body>
-    <h1 id="welcomemessage">Hello</h1>
-    <button id="logoutbutton" class="hidden">Logout</button>
+    <div class="t6">
+    
 
     <script>
         var user = localStorage.getItem("user");
@@ -33,5 +33,11 @@ document.getElementById("logoutbutton").addEventListener("click", function() {
 });
         
     </script>
+  
+      <h4 id="welcomemessage">Hello</h4>
+    <button id="logoutbutton" class="hidden">Logout</button>
+ 
+    
+
 </body>
 </html>

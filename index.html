@@ -41,10 +41,43 @@
     
     </ul>
     
-     <li> <a href="./hhh.tml/name2.html"><button type="submit" style="margin-left:-20px; border-radius: 10px; width: 50px; " class="j6"><b>log in</b></button></a>
+      <li>
+        <button class="login-btn" onclick="loginToggle()" id="loginBtn">
+            Login
+        </button>
+    </li>
+
+<script>
+function loginToggle() {
+  if (localStorage.getItem("isLoggedIn") === "true") {
+    
+    localStorage.setItem("isLoggedIn", "false");
+    window.location.href = "ss.html";
+  } else {
+    
+    localStorage.setItem("isLoggedIn", "true");
+    window.location.href = "bbb.html";
+  }
+}
+
+
+window.onload = function () {
+  const btn = document.getElementById("loginBtn");
+  if (!btn) return;
+
+  if (localStorage.getItem("isLoggedIn") === "true") {
+    btn.innerText = "Logout";
+  } else {
+    btn.innerText = "Login";
+  }
+};
+</script>
+    
+
       </li>
     </ul>
 </ul>
+
 
 <div class="jk1">
   
@@ -265,5 +298,7 @@ function sayHello() {
 alert("updated sucessfuly");
 }
 </script>  
+
+
 </body>
 </html>
